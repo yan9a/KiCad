@@ -1,0 +1,25 @@
+EESchema-LIBRARY Version 2.3
+#encoding utf-8
+#
+# SP0503BAHTG
+#
+DEF SP0503BAHTG U 0 40 Y Y 1 F N
+F0 "U" 0 50 60 H V C CNN
+F1 "SP0503BAHTG" 0 -50 60 H V C CNN
+F2 "SOT143" -100 -50 60 H I C CNN
+F3 "http://www.farnell.com/datasheets/2099751.pdf?_ga=2.7087157.606532877.1498095462-1166361802.1490261811" 0 50 60 H I C CNN
+F4 "SP0503BAHTG" 100 150 60 H I C CNN "PartNo"
+F5 "http://sg.element14.com/littelfuse/sp0503bahtg/diode-tvs-aval-3-ch-sot143/dp/1827633" 200 250 60 H I C CNN "Supplier"
+$FPLIST
+ SOT-143
+$ENDFPLIST
+DRAW
+S -350 250 350 -200 0 1 0 f
+X A 1 0 -400 200 U 50 50 1 1 P
+X Ka 2 -200 450 200 D 50 50 1 1 P
+X Kb 3 0 450 200 D 50 50 1 1 P
+X Kc 4 200 450 200 D 50 50 1 1 P
+ENDDRAW
+ENDDEF
+#
+#End Library

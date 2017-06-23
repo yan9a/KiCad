@@ -1,0 +1,657 @@
+EESchema Schematic File Version 2
+LIBS:power
+LIBS:device
+LIBS:transistors
+LIBS:conn
+LIBS:linear
+LIBS:regul
+LIBS:74xx
+LIBS:cmos4000
+LIBS:adc-dac
+LIBS:memory
+LIBS:xilinx
+LIBS:microcontrollers
+LIBS:dsp
+LIBS:microchip
+LIBS:analog_switches
+LIBS:motorola
+LIBS:texas
+LIBS:intel
+LIBS:audio
+LIBS:interface
+LIBS:digital-audio
+LIBS:philips
+LIBS:display
+LIBS:cypress
+LIBS:siliconi
+LIBS:opto
+LIBS:atmel
+LIBS:contrib
+LIBS:valves
+LIBS:silabs
+LIBS:nxp_armmcu
+LIBS:nxp
+LIBS:lpc824m201jhi33
+LIBS:cp2102N
+LIBS:sp0503bahtg
+LIBS:ckt1-cache
+EELAYER 25 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title "ckt1"
+Date "2017-06-08"
+Rev "1"
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L R R2
+U 1 1 593F502C
+P 4000 2750
+F 0 "R2" V 4080 2750 50  0000 C CNN
+F 1 "2k2" V 4000 2750 50  0000 C CNN
+F 2 "Resistors_SMD:R_0402" V 3930 2750 50  0001 C CNN
+F 3 "http://www.farnell.com/datasheets/1849611.pdf?_ga=2.120227403.2127618585.1497321843-1166361802.1490261811" H 4000 2750 50  0001 C CNN
+F 4 "MCWR04X2201FTL" V 4000 2750 60  0001 C CNN "PartNo"
+F 5 "http://sg.element14.com/multicomp/mcwr04x2201ftl/res-thick-film-2-2kohm-1-0-0625w/dp/2447148" V 4000 2750 60  0001 C CNN "Supplier"
+	1    4000 2750
+	1    0    0    -1  
+$EndComp
+$Comp
+L LED_Small D1
+U 1 1 593F53DD
+P 4000 3200
+F 0 "D1" H 3950 3325 50  0000 L CNN
+F 1 "LED" H 3825 3100 50  0001 L CNN
+F 2 "LEDs:LED_0402" V 4000 3200 50  0001 C CNN
+F 3 "http://www.farnell.com/datasheets/1955757.pdf" V 4000 3200 50  0001 C CNN
+F 4 "HSMG-C280" H 4000 3200 60  0001 C CNN "PartNo"
+F 5 "http://sg.element14.com/broadcom-limited/hsmg-c280/led-green-15mcd-572nm-0402/dp/2494322" H 4000 3200 60  0001 C CNN "Supplier"
+	1    4000 3200
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	3450 2150 5850 2150
+Wire Wire Line
+	4000 1950 4000 2600
+Wire Wire Line
+	4000 2900 4000 3100
+$Comp
+L GND #PWR01
+U 1 1 593F67F2
+P 4000 3500
+F 0 "#PWR01" H 4000 3250 50  0001 C CNN
+F 1 "GND" H 4000 3350 50  0000 C CNN
+F 2 "" H 4000 3500 50  0001 C CNN
+F 3 "" H 4000 3500 50  0001 C CNN
+	1    4000 3500
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4000 3300 4000 3500
+$Comp
+L VCC #PWR02
+U 1 1 593F6A53
+P 4000 1950
+F 0 "#PWR02" H 4000 1800 50  0001 C CNN
+F 1 "VCC" H 4000 2100 50  0000 C CNN
+F 2 "" H 4000 1950 50  0001 C CNN
+F 3 "" H 4000 1950 50  0001 C CNN
+	1    4000 1950
+	1    0    0    -1  
+$EndComp
+Connection ~ 4000 2150
+Wire Wire Line
+	3150 2750 3150 3400
+Wire Wire Line
+	3150 3400 4750 3400
+Connection ~ 4000 3400
+$Comp
+L PWR_FLAG #FLG03
+U 1 1 593F6FC6
+P 3550 1950
+F 0 "#FLG03" H 3550 2025 50  0001 C CNN
+F 1 "PWR_FLAG" H 3550 2100 50  0000 C CNN
+F 2 "" H 3550 1950 50  0001 C CNN
+F 3 "" H 3550 1950 50  0001 C CNN
+	1    3550 1950
+	1    0    0    -1  
+$EndComp
+$Comp
+L PWR_FLAG #FLG04
+U 1 1 593F6FE2
+P 3600 3250
+F 0 "#FLG04" H 3600 3325 50  0001 C CNN
+F 1 "PWR_FLAG" H 3600 3400 50  0000 C CNN
+F 2 "" H 3600 3250 50  0001 C CNN
+F 3 "" H 3600 3250 50  0001 C CNN
+	1    3600 3250
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3550 1950 3550 2150
+Connection ~ 3550 2150
+Wire Wire Line
+	3600 3250 3600 3400
+Connection ~ 3600 3400
+Text Notes 2850 2650 1    39   ~ 0
+USB Type A Male
+Wire Wire Line
+	3450 2450 5450 2450
+$Comp
+L CP2102N U1
+U 1 1 594395F4
+P 6550 2750
+F 0 "U1" H 6500 3000 50  0000 L CNN
+F 1 "CP2102N" H 6400 2650 50  0000 L CNN
+F 2 "myfootprint:QFN28" H 6850 3600 50  0001 L CNN
+F 3 "http://www.silabs.com/documents/public/data-sheets/cp2102n-datasheet.pdf" H 6000 4000 50  0001 C CNN
+F 4 "CP2102N-A01-GQFN28" H 6600 3100 60  0001 C CNN "PartNo"
+F 5 "http://sg.element14.com/silicon-labs/cp2102n-a01-gqfn28/usb-uart-interface-bridge-qfn/dp/2577279" H 6700 3200 60  0001 C CNN "Supplier"
+	1    6550 2750
+	1    0    0    -1  
+$EndComp
+$Comp
+L C_Small C3
+U 1 1 5948A263
+P 4400 2800
+F 0 "C3" H 4410 2870 50  0000 L CNN
+F 1 "0.1uF" H 4410 2720 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0402" H 4400 2800 50  0001 C CNN
+F 3 "http://www.farnell.com/datasheets/1958513.pdf?_ga=2.72149904.2048166841.1497931958-1166361802.1490261811" H 4400 2800 50  0001 C CNN
+F 4 "0402B104K160CT" H 4400 2800 60  0001 C CNN "PartNo"
+F 5 "http://sg.element14.com/walsin/0402b104k160ct/capacitor-mlcc-x7r-0-1uf-16v-0402/dp/2496771" H 4400 2800 60  0001 C CNN "Supplier"
+	1    4400 2800
+	1    0    0    -1  
+$EndComp
+$Comp
+L C_Small C4
+U 1 1 5948A2D2
+P 4750 2800
+F 0 "C4" H 4760 2870 50  0000 L CNN
+F 1 "4.7uF" H 4760 2720 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0603" H 4750 2800 50  0001 C CNN
+F 3 "http://www.farnell.com/datasheets/2291921.pdf?_ga=2.245353350.2048166841.1497931958-1166361802.1490261811" H 4750 2800 50  0001 C CNN
+F 4 "C1608X5R1C475K080AC" H 4750 2800 60  0001 C CNN "PartNo"
+F 5 "http://sg.element14.com/tdk/c1608x5r1c475k080ac/cap-mlcc-x5r-4-7uf-16v-0603/dp/2211173" H 4750 2800 60  0001 C CNN "Supplier"
+	1    4750 2800
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4750 3400 4750 2900
+Wire Wire Line
+	4400 2900 4400 3400
+Connection ~ 4400 3400
+Wire Wire Line
+	4400 2700 4400 2150
+Connection ~ 4400 2150
+Wire Wire Line
+	4750 2700 4750 2150
+Connection ~ 4750 2150
+Wire Wire Line
+	5850 2350 5700 2350
+Wire Wire Line
+	5700 2350 5700 2150
+Connection ~ 5700 2150
+$Comp
+L VDD #PWR05
+U 1 1 5948A7F0
+P 6550 1650
+F 0 "#PWR05" H 6550 1500 50  0001 C CNN
+F 1 "VDD" H 6550 1800 50  0000 C CNN
+F 2 "" H 6550 1650 50  0001 C CNN
+F 3 "" H 6550 1650 50  0001 C CNN
+	1    6550 1650
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6550 1850 6550 1650
+NoConn ~ 6350 1850
+NoConn ~ 6750 1850
+NoConn ~ 6650 1850
+$Comp
+L C_Small C1
+U 1 1 5948AD22
+P 2400 4750
+F 0 "C1" H 2410 4820 50  0000 L CNN
+F 1 "0.1uF" H 2410 4670 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0402" H 2400 4750 50  0001 C CNN
+F 3 "http://www.farnell.com/datasheets/1958513.pdf?_ga=2.72149904.2048166841.1497931958-1166361802.1490261811" H 2400 4750 50  0001 C CNN
+F 4 "0402B104K160CT" H 2400 4750 60  0001 C CNN "PartNo"
+F 5 "http://sg.element14.com/walsin/0402b104k160ct/capacitor-mlcc-x7r-0-1uf-16v-0402/dp/2496771" H 2400 4750 60  0001 C CNN "Supplier"
+	1    2400 4750
+	1    0    0    -1  
+$EndComp
+$Comp
+L C_Small C2
+U 1 1 5948B01E
+P 2750 4750
+F 0 "C2" H 2760 4820 50  0000 L CNN
+F 1 "4.7uF" H 2760 4670 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0603" H 2750 4750 50  0001 C CNN
+F 3 "http://www.farnell.com/datasheets/2291921.pdf?_ga=2.245353350.2048166841.1497931958-1166361802.1490261811" H 2750 4750 50  0001 C CNN
+F 4 "C1608X5R1C475K080AC" H 2750 4750 60  0001 C CNN "PartNo"
+F 5 "http://sg.element14.com/tdk/c1608x5r1c475k080ac/cap-mlcc-x5r-4-7uf-16v-0603/dp/2211173" H 2750 4750 60  0001 C CNN "Supplier"
+	1    2750 4750
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR06
+U 1 1 5948B0AF
+P 2400 5000
+F 0 "#PWR06" H 2400 4750 50  0001 C CNN
+F 1 "GND" H 2400 4850 50  0000 C CNN
+F 2 "" H 2400 5000 50  0001 C CNN
+F 3 "" H 2400 5000 50  0001 C CNN
+	1    2400 5000
+	1    0    0    -1  
+$EndComp
+$Comp
+L VDD #PWR07
+U 1 1 5948B0D5
+P 2400 4450
+F 0 "#PWR07" H 2400 4300 50  0001 C CNN
+F 1 "VDD" H 2400 4600 50  0000 C CNN
+F 2 "" H 2400 4450 50  0001 C CNN
+F 3 "" H 2400 4450 50  0001 C CNN
+	1    2400 4450
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2400 4450 2400 4650
+Wire Wire Line
+	2400 4850 2400 5000
+Wire Wire Line
+	2750 4650 2750 4550
+Wire Wire Line
+	2750 4550 2400 4550
+Connection ~ 2400 4550
+Wire Wire Line
+	2750 4850 2750 4950
+Wire Wire Line
+	2750 4950 2400 4950
+Connection ~ 2400 4950
+NoConn ~ 5850 3450
+NoConn ~ 5850 3350
+NoConn ~ 5850 3250
+NoConn ~ 5850 3550
+$Comp
+L GND #PWR08
+U 1 1 5948BA70
+P 6550 3850
+F 0 "#PWR08" H 6550 3600 50  0001 C CNN
+F 1 "GND" H 6550 3700 50  0000 C CNN
+F 2 "" H 6550 3850 50  0001 C CNN
+F 3 "" H 6550 3850 50  0001 C CNN
+	1    6550 3850
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6550 3750 6550 3850
+Wire Wire Line
+	6650 3750 6650 3800
+Wire Wire Line
+	6650 3800 6550 3800
+Connection ~ 6550 3800
+NoConn ~ 5850 2950
+NoConn ~ 5850 3050
+NoConn ~ 7250 2150
+NoConn ~ 7250 2250
+NoConn ~ 7250 3350
+$Comp
+L R R6
+U 1 1 5948BEC7
+P 7750 3450
+F 0 "R6" V 7830 3450 50  0000 C CNN
+F 1 "10k" V 7750 3450 50  0000 C CNN
+F 2 "Resistors_SMD:R_0402" V 7680 3450 50  0001 C CNN
+F 3 "http://www.farnell.com/datasheets/1849611.pdf?_ga=2.39265312.2048166841.1497931958-1166361802.1490261811" H 7750 3450 50  0001 C CNN
+F 4 "MCWR04X1002FTL" V 7750 3450 60  0001 C CNN "PartNo"
+F 5 "http://sg.element14.com/multicomp/mcwr04x1002ftl/res-thick-film-10kohm-1-0-0625w/dp/2447096" V 7750 3450 60  0001 C CNN "Supplier"
+	1    7750 3450
+	0    1    1    0   
+$EndComp
+$Comp
+L GND #PWR09
+U 1 1 5948BF9C
+P 8250 3600
+F 0 "#PWR09" H 8250 3350 50  0001 C CNN
+F 1 "GND" H 8250 3450 50  0000 C CNN
+F 2 "" H 8250 3600 50  0001 C CNN
+F 3 "" H 8250 3600 50  0001 C CNN
+	1    8250 3600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7900 3450 8250 3450
+Wire Wire Line
+	7250 3450 7600 3450
+Wire Wire Line
+	5850 2650 5450 2650
+Wire Wire Line
+	3450 2350 5350 2350
+Wire Wire Line
+	5350 2750 5850 2750
+Wire Wire Line
+	5450 2650 5450 2450
+Wire Wire Line
+	5350 2350 5350 2750
+$Comp
+L VDD #PWR010
+U 1 1 5948CE70
+P 8250 2500
+F 0 "#PWR010" H 8250 2350 50  0001 C CNN
+F 1 "VDD" H 8250 2650 50  0000 C CNN
+F 2 "" H 8250 2500 50  0001 C CNN
+F 3 "" H 8250 2500 50  0001 C CNN
+	1    8250 2500
+	1    0    0    -1  
+$EndComp
+$Comp
+L R R3
+U 1 1 5948CEAF
+P 7750 2750
+F 0 "R3" V 7830 2750 50  0000 C CNN
+F 1 "10k" V 7750 2750 50  0000 C CNN
+F 2 "Resistors_SMD:R_0402" V 7680 2750 50  0001 C CNN
+F 3 "http://www.farnell.com/datasheets/1849611.pdf?_ga=2.39265312.2048166841.1497931958-1166361802.1490261811" H 7750 2750 50  0001 C CNN
+F 4 "MCWR04X1002FTL" V 7750 2750 60  0001 C CNN "PartNo"
+F 5 "http://sg.element14.com/multicomp/mcwr04x1002ftl/res-thick-film-10kohm-1-0-0625w/dp/2447096" V 7750 2750 60  0001 C CNN "Supplier"
+	1    7750 2750
+	0    1    1    0   
+$EndComp
+$Comp
+L R R4
+U 1 1 5948CF27
+P 7750 3050
+F 0 "R4" V 7830 3050 50  0000 C CNN
+F 1 "10k" V 7750 3050 50  0000 C CNN
+F 2 "Resistors_SMD:R_0402" V 7680 3050 50  0001 C CNN
+F 3 "http://www.farnell.com/datasheets/1849611.pdf?_ga=2.39265312.2048166841.1497931958-1166361802.1490261811" H 7750 3050 50  0001 C CNN
+F 4 "MCWR04X1002FTL" V 7750 3050 60  0001 C CNN "PartNo"
+F 5 "http://sg.element14.com/multicomp/mcwr04x1002ftl/res-thick-film-10kohm-1-0-0625w/dp/2447096" V 7750 3050 60  0001 C CNN "Supplier"
+	1    7750 3050
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	7250 2750 7600 2750
+Wire Wire Line
+	7900 2750 8250 2750
+Wire Wire Line
+	8250 2500 8250 3250
+Wire Wire Line
+	7250 3050 7600 3050
+Wire Wire Line
+	8250 3050 7900 3050
+Connection ~ 8250 2750
+Wire Wire Line
+	8250 3450 8250 3600
+$Comp
+L R R5
+U 1 1 5948DD25
+P 7750 3250
+F 0 "R5" V 7830 3250 50  0000 C CNN
+F 1 "1k" V 7750 3250 50  0000 C CNN
+F 2 "Resistors_SMD:R_0402" V 7680 3250 50  0001 C CNN
+F 3 "http://www.farnell.com/datasheets/1849611.pdf?_ga=2.43895590.2048166841.1497931958-1166361802.1490261811" H 7750 3250 50  0001 C CNN
+F 4 "MCWR04X1001FTL" V 7750 3250 60  0001 C CNN "PartNo"
+F 5 "http://sg.element14.com/multicomp/mcwr04x1001ftl/res-thick-film-1kohm-1-0-0625w/dp/2447120" V 7750 3250 60  0001 C CNN "Supplier"
+	1    7750 3250
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	8250 3250 7900 3250
+Connection ~ 8250 3050
+Wire Wire Line
+	7250 3250 7600 3250
+$Comp
+L GND #PWR011
+U 1 1 5948E6CC
+P 7750 4900
+F 0 "#PWR011" H 7750 4650 50  0001 C CNN
+F 1 "GND" H 7750 4750 50  0000 C CNN
+F 2 "" H 7750 4900 50  0001 C CNN
+F 3 "" H 7750 4900 50  0001 C CNN
+	1    7750 4900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7750 4650 7750 4900
+Wire Wire Line
+	7750 4650 7800 4650
+$Comp
+L VDD #PWR012
+U 1 1 5948EC33
+P 7750 4150
+F 0 "#PWR012" H 7750 4000 50  0001 C CNN
+F 1 "VDD" H 7750 4300 50  0000 C CNN
+F 2 "" H 7750 4150 50  0001 C CNN
+F 3 "" H 7750 4150 50  0001 C CNN
+	1    7750 4150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7800 4250 7750 4250
+Wire Wire Line
+	7750 4250 7750 4150
+Wire Wire Line
+	7250 2350 7550 2350
+Wire Wire Line
+	7550 2350 7550 4350
+Wire Wire Line
+	7550 4350 7800 4350
+Wire Wire Line
+	7800 4450 7500 4450
+Wire Wire Line
+	7500 4450 7500 2750
+Connection ~ 7500 2750
+Wire Wire Line
+	7800 4550 7450 4550
+Wire Wire Line
+	7450 4550 7450 2650
+Wire Wire Line
+	7450 2650 7250 2650
+$Comp
+L VCC #PWR013
+U 1 1 5948F4E1
+P 8400 4150
+F 0 "#PWR013" H 8400 4000 50  0001 C CNN
+F 1 "VCC" H 8400 4300 50  0000 C CNN
+F 2 "" H 8400 4150 50  0001 C CNN
+F 3 "" H 8400 4150 50  0001 C CNN
+	1    8400 4150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7400 5150 7400 2950
+Wire Wire Line
+	7400 2950 7250 2950
+Wire Wire Line
+	7300 3050 7300 5350
+Connection ~ 7300 3050
+NoConn ~ 7250 2450
+Wire Wire Line
+	5850 3150 5300 3150
+$Comp
+L USB_A J1
+U 1 1 59391298
+P 3150 2350
+F 0 "J1" H 2950 2800 50  0000 L CNN
+F 1 "USB_A" H 2950 2700 50  0000 L CNN
+F 2 "myfootprint:USB_A_Plug" H 3300 2300 50  0001 C CNN
+F 3 "http://www.molex.com/webdocs/datasheets/pdf/en-us//0480370001_IO_CONNECTORS.pdf" H 3300 2300 50  0001 C CNN
+F 4 "http://sg.element14.com/molex/48037-0001/usb-2-0-type-a-receptacle-th/dp/2067044" H 3150 2350 60  0001 C CNN "Supplier"
+F 5 "48037-0001" H 3150 2350 60  0001 C CNN "PartNo"
+	1    3150 2350
+	1    0    0    -1  
+$EndComp
+$Comp
+L CONN_02X05 J2
+U 1 1 594B49CF
+P 8050 4450
+F 0 "J2" H 8050 4750 50  0000 C CNN
+F 1 "CONN_02X05" H 8050 4150 50  0000 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_2x05_Pitch2.54mm" H 8050 3250 50  0001 C CNN
+F 3 "" H 8050 3250 50  0001 C CNN
+	1    8050 4450
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8300 4250 8400 4250
+Wire Wire Line
+	8400 4250 8400 4150
+Wire Wire Line
+	8300 4450 8600 4450
+Wire Wire Line
+	8600 4450 8600 5350
+Wire Wire Line
+	8600 5350 7300 5350
+Wire Wire Line
+	8300 4550 8500 4550
+Wire Wire Line
+	8500 4550 8500 5150
+Wire Wire Line
+	8500 5150 7400 5150
+Wire Wire Line
+	8300 4650 8350 4650
+Wire Wire Line
+	8350 4650 8350 4850
+Wire Wire Line
+	8350 4850 7750 4850
+Connection ~ 7750 4850
+Wire Wire Line
+	8300 4350 8750 4350
+Wire Wire Line
+	8750 4350 8750 5500
+Wire Wire Line
+	8750 5500 5300 5500
+$Comp
+L GNDPWR #PWR014
+U 1 1 594B6AA1
+P 2350 3400
+F 0 "#PWR014" H 2350 3200 50  0001 C CNN
+F 1 "GNDPWR" H 2350 3270 50  0000 C CNN
+F 2 "" H 2350 3350 50  0001 C CNN
+F 3 "" H 2350 3350 50  0001 C CNN
+	1    2350 3400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3050 2750 2350 2750
+Wire Wire Line
+	2350 2750 2350 3400
+$Comp
+L R R1
+U 1 1 594B6FAA
+P 2750 3000
+F 0 "R1" V 2830 3000 50  0000 C CNN
+F 1 "1M" V 2750 3000 50  0000 C CNN
+F 2 "Resistors_SMD:R_0805" V 2680 3000 50  0001 C CNN
+F 3 "http://www.farnell.com/datasheets/1851648.pdf?_ga=2.13749040.606532877.1498095462-1166361802.1490261811" H 2750 3000 50  0001 C CNN
+F 4 "LHVC0805-1MFT5" V 2750 3000 60  0001 C CNN "PartNo"
+F 5 "http://sg.element14.com/welwyn/lhvc0805-1mft5/res-metal-film-1m-1-0-125w-0805/dp/1506149" V 2750 3000 60  0001 C CNN "Supplier"
+	1    2750 3000
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	2900 3000 3150 3000
+Connection ~ 3150 3000
+Wire Wire Line
+	2600 3000 2350 3000
+Connection ~ 2350 3000
+$Comp
+L C_Small C5
+U 1 1 594B7571
+P 2750 3300
+F 0 "C5" H 2760 3370 50  0000 L CNN
+F 1 "100pF" H 2760 3220 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0805" H 2750 3300 50  0001 C CNN
+F 3 "http://www.farnell.com/datasheets/2207007.pdf?_ga=2.39070884.606532877.1498095462-1166361802.1490261811" H 2750 3300 50  0001 C CNN
+F 4 "C0805X101KDRACTU" H 2750 3300 60  0001 C CNN "PartNo"
+F 5 "http://sg.element14.com/kemet/c0805x101kdractu/cap-mlcc-x7r-100pf-1kv-0805/dp/1855317" H 2750 3300 60  0001 C CNN "Supplier"
+	1    2750 3300
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	2000 3300 2650 3300
+Connection ~ 2350 3300
+Wire Wire Line
+	2850 3300 3150 3300
+Connection ~ 3150 3300
+Text Label 5000 2150 0    60   ~ 0
+VBus
+Text Label 4950 2350 0    60   ~ 0
+D+
+Text Label 4900 2450 0    60   ~ 0
+D-
+$Comp
+L SP0503BAHTG U2
+U 1 1 594B7E34
+P 3900 4750
+F 0 "U2" H 3900 4800 60  0000 C CNN
+F 1 "SP0503BAHTG" H 3900 4700 60  0000 C CNN
+F 2 "TO_SOT_Packages_SMD:SOT-143" H 3800 4700 60  0001 C CNN
+F 3 "http://www.farnell.com/datasheets/2099751.pdf?_ga=2.7087157.606532877.1498095462-1166361802.1490261811" H 3900 4800 60  0001 C CNN
+F 4 "SP0503BAHTG" H 4000 4900 60  0001 C CNN "PartNo"
+F 5 "http://sg.element14.com/littelfuse/sp0503bahtg/diode-tvs-aval-3-ch-sot143/dp/1827633" H 4100 5000 60  0001 C CNN "Supplier"
+	1    3900 4750
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR015
+U 1 1 594B7EFF
+P 3900 5250
+F 0 "#PWR015" H 3900 5000 50  0001 C CNN
+F 1 "GND" H 3900 5100 50  0000 C CNN
+F 2 "" H 3900 5250 50  0001 C CNN
+F 3 "" H 3900 5250 50  0001 C CNN
+	1    3900 5250
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3900 5150 3900 5250
+Wire Wire Line
+	3700 4300 3700 4000
+Wire Wire Line
+	3900 4300 3900 4000
+Wire Wire Line
+	4100 4000 4100 4300
+Text Label 3700 4100 1    60   ~ 0
+VBus
+Text Label 3900 4100 1    60   ~ 0
+D+
+Text Label 4100 4050 1    60   ~ 0
+D-
+Wire Wire Line
+	5300 5500 5300 3150
+$Comp
+L PWR_FLAG #FLG016
+U 1 1 594B9429
+P 2000 3250
+F 0 "#FLG016" H 2000 3325 50  0001 C CNN
+F 1 "PWR_FLAG" H 2000 3400 50  0000 C CNN
+F 2 "" H 2000 3250 50  0001 C CNN
+F 3 "" H 2000 3250 50  0001 C CNN
+	1    2000 3250
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2000 3250 2000 3300
+Text Label 7500 2350 0    60   ~ 0
+DTR
+Text Label 7350 2650 0    60   ~ 0
+TXD
+Text Label 7650 4450 0    60   ~ 0
+RXD
+Text Label 8250 5150 0    60   ~ 0
+RTS
+Text Label 8000 5350 0    60   ~ 0
+CTS
+Text Label 6400 5500 0    60   ~ 0
+RS485
+$EndSCHEMATC
